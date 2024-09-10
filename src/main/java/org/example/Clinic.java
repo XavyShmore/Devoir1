@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.List;
+
 public class Clinic {
     
     private ITriage doctorTriageAlgo;
@@ -23,10 +25,13 @@ public class Clinic {
         if(visibleSymptom == VisibleSymptom.BROKEN_BONE || VisibleSymptom.SPRAIN == visibleSymptom){
             radiologyTriageAlgo.addNewPatient(patient);
         }
-
-
     }
 
-    // D'autres méthodes peuvent être nécessaires
+    public List<Patient> getDoctorQueue() {
+        return doctorTriageAlgo.getPatientQueue();
+    }
 
+    public List<Patient> getRadiologyQueue() {
+        return radiologyTriageAlgo.getPatientQueue();
+    }
 }

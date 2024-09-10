@@ -1,5 +1,6 @@
 package org.example;
 import java.util.LinkedList;
+import java.util.List;
 
 
 public class TriageFifo implements ITriage {
@@ -12,5 +13,10 @@ public class TriageFifo implements ITriage {
 
     public Patient getNextPatient(){
         return patientQueue.removeFirst();
+    }
+
+    @Override
+    public List<Patient> getPatientQueue() {
+        return List.of();
     }
 }
