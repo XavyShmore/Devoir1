@@ -21,6 +21,6 @@ public class TriagePriorité implements ITriage {
 
     @Override
     public List<Patient> getPatientQueue() {
-        return List.of();
+        return patientQueue;
     }
 }
