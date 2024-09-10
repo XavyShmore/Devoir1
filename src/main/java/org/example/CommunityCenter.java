@@ -12,8 +12,10 @@ public class CommunityCenter {
         triageInfirmièreAlgo = new TriageFifo();
     }
 
-    public void triagePatient(String name, int gravity) {
-        Patient patient = new Patient(name, gravity, VisibleSymptom.NONE);
+    public void triagePatient(String name, int gravity, VisibleSymptom symptom) {
+        if(symptom == VisibleSymptom.CORONAVIRUS) return;
+
+        Patient patient = new Patient(name, gravity, symptom);
 
         triageInfirmièreAlgo.addNewPatient(patient);
     }

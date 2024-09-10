@@ -20,6 +20,8 @@ public class Clinic {
     }
 
     public void triagePatient(String name, int gravity, VisibleSymptom visibleSymptom) {
+        if(visibleSymptom == VisibleSymptom.CORONAVIRUS) return;
+
         Patient patient = new Patient(name, gravity, visibleSymptom);
 
         doctorTriageAlgo.addNewPatient(patient);
@@ -27,8 +29,6 @@ public class Clinic {
         if(visibleSymptom == VisibleSymptom.BROKEN_BONE || VisibleSymptom.SPRAIN == visibleSymptom){
             radiologyTriageAlgo.addNewPatient(patient);
         }
-
-
     }
 
     // D'autres méthodes peuvent être nécessaires
