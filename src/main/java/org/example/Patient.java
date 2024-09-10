@@ -10,4 +10,8 @@ public class Patient {
         this.gravity = gravity;
         this.symptom = symptom;
     }
+
+    int getGravity(){
+        return gravity;
+    }
 }

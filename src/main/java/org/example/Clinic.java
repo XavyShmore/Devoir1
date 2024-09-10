@@ -8,10 +8,14 @@ public class Clinic {
     public Clinic(TriageType doctorTriage, TriageType radiologyTriage) {
         if(doctorTriage == TriageType.FIFO){
             doctorTriageAlgo = new TriageFifo();
+        } else if (doctorTriage == TriageType.GRAVITY) {
+            doctorTriageAlgo = new TriagePriorité();
         }
 
         if(radiologyTriage == TriageType.FIFO){
             radiologyTriageAlgo = new TriageFifo();
+        }else if (radiologyTriage == TriageType.GRAVITY) {
+            radiologyTriageAlgo = new TriagePriorité();
         }
     }
 
